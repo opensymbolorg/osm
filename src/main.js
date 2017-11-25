@@ -3,6 +3,11 @@ import App from './components/App'
 import router from './router'
 import store from './store'
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Vue.use(ElementUI)
+
 Vue.config.devtools = true
 Vue.config.productionTip = false
 
@@ -12,6 +17,7 @@ new Vue({
   el: '#app',
   router,
   store,
-  template: '<App />',
-  components: { App }
+  // template: '<App />',
+  // components: { App }
+  render: h => h(App)
 })

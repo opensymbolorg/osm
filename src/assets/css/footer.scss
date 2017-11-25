@@ -1,0 +1,27 @@
+.el-footer {
+  ul {
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  li a {
+    color: #878D99;
+
+    &:hover {
+      color: #2D2F33;
+    }
+  }
+}
