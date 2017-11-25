@@ -1,3 +1,10 @@
+var OpenSymbolRegistry = artifacts.require("./OpenSymbolRegistry.sol");
+
+module.exports = function(deployer) {
+  deployer.deploy(OpenSymbolRegistry);
+};
+
+/**
 var Ownable = artifacts.require("./zeppelin/ownership/Ownable.sol");
 var Destructible = artifacts.require("./zeppelin/lifecycle/Destructible.sol");
 var Authentication = artifacts.require("./Authentication.sol");
@@ -14,3 +21,4 @@ module.exports = function(deployer) {
   deployer.link(SafeMath, PullPayment);
   deployer.deploy(PullPayment);
 };
+*/
