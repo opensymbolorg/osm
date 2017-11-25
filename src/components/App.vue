@@ -12,6 +12,7 @@ export default {
 
 <style lang="sass">
 @import "../assets/css/base.scss";
+@import "../assets/css/main.scss";
 @import "../assets/css/footer.scss";
 </style>
 

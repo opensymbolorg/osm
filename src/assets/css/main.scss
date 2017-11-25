@@ -1,0 +1,38 @@
+#app {
+  & > .el-container {
+    min-height: 100vh;
+  }
+
+  .el-main {
+    padding-top: 0;
+  }
+
+  .intro {
+    margin-top: 0;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
+  section.search {
+    margin: 20px 0;
+  }
+
+  .coin-wrapper {
+    display: inline-block;
+    padding: 20px 0;
+    text-align: center;
+    color: inherit;
+    width: 100%;
+  }
+
+  .coin-name {
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+
+  .el-card {
+    margin-bottom: 20px;
+  }
+}

@@ -1,21 +1,24 @@
 export default {
-  currentRoute: null,
-  web3: {
-    address: null,
-    coinbase: null,
-    error: null,
-    instance: null,
-    isInjected: false,
-    networkId: null
-  },
-  user: {
-    coinbase: '',
-    email: '',
-    firstName: '',
-    lastName: '',
-    hasCoinbase: false,
-    hasWeb3InjectedBrowser: false,
-    isConnectedToApprovedNetwork: false,
-    isLoggedIn: false
-  }
+  registered: ['game', 'pay', 'btcusd'],
+  voting: ['usd', 'aud', 'gold']
+
+  // currentRoute: null,
+  // web3: {
+  //   address: null,
+  //   coinbase: null,
+  //   error: null,
+  //   instance: null,
+  //   isInjected: false,
+  //   networkId: null
+  // },
+  // user: {
+  //   coinbase: '',
+  //   email: '',
+  //   firstName: '',
+  //   lastName: '',
+  //   hasCoinbase: false,
+  //   hasWeb3InjectedBrowser: false,
+  //   isConnectedToApprovedNetwork: false,
+  //   isLoggedIn: false
+  // }
 }

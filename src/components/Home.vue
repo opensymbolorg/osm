@@ -13,11 +13,11 @@
         <div class="box">
           <h3>Registered</h3>
           <el-row :gutter=10>
-            <el-col :span="8" v-for="(o, index) in registerd" :key="o">
+            <el-col :span="8" v-for="(o, index) in registered" :key="o">
               <el-card :body-style="{ padding: '0px' }">
-                <div class="coin-wrapper">
+                <router-link :to="o" class="coin-wrapper">
                   <span class="coin-name">{{ o }}</span>
-                </div>
+                </router-link>
               </el-card>
             </el-col>
           </el-row>
@@ -28,9 +28,9 @@
           <el-row :gutter=10>
             <el-col :span="8" v-for="(o, index) in voting" :key="o">
               <el-card :body-style="{ padding: '0px' }">
-                <div class="coin-wrapper">
+                <router-link :to="o" class="coin-wrapper">
                   <span class="coin-name">{{ o }}</span>
-                </div>
+                </router-link>
               </el-card>
             </el-col>
           </el-row>
@@ -42,57 +42,26 @@
 </template>
 
 <script>
-  import AppHeader from './layout/Header'
-  import AppFooter from './layout/Footer'
+import { mapState } from 'vuex'
+import AppHeader from './layout/Header'
+import AppFooter from './layout/Footer'
 
-  export default {
-    name: 'home',
-    components: {
-      AppHeader,
-      AppFooter
-    },
-    data () {
-      return {
-        input: '',
-        registerd: ['game', 'pay', 'btcusd'],
-        voting: ['usd', 'aud', 'gold']
-      }
+export default {
+  name: 'home',
+  components: {
+    AppHeader,
+    AppFooter
+  },
+  data () {
+    return {
+      input: ''
     }
+  },
+  computed: {
+    ...mapState([
+      'registered',
+      'voting'
+    ])
   }
+}
 </script>
-
-<style scoped>
-#app > .el-container {
-  min-height: 100vh;
-}
-
-.el-main {
-  padding-top: 0;
-}
-
-.intro {
-  margin-top: 0;
-}
-
-.align-center {
-  text-align: center;
-}
-
-section.search {
-  margin: 20px 0;
-}
-
-.coin-wrapper {
-  padding: 20px 0;
-  text-align: center;
-}
-
-.coin-name {
-  text-transform: uppercase;
-  font-size: 16px;
-}
-
-.el-card {
-  margin-bottom: 20px;
-}
-</style>
