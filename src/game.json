@@ -1,0 +1,38 @@
+{
+  "symbol": "GAME",
+  "vote_started_at": 1511599381,
+  "vote_ended_at": 1512000000,
+  "status": "voting",
+  "listed": [
+    {
+      "id": "GAME.GameCredit",
+      "name": "GameCredit",
+      "symbol": "GAME",
+      "address": "0x111",
+      "owner": "0x000",
+      "platform": "Ethereum",
+      "project": "gamecredits",
+      "votes": 10000
+    },
+    {
+      "id": "GAME.Steam",
+      "name": "Steam Game Credits",
+      "owner": "0x000",
+      "address": "0x888",
+      "symbol": "GAME",
+      "project": "Steam",
+      "platform": "Omni",
+      "votes": 10
+    },
+    {
+      "id": "GAME.Playkey",
+      "name": "PlayKey Game Credits",
+      "owner": "0x999",
+      "address": "0x999",
+      "symbol": "GAME",
+      "project": "Playkey",
+      "platform": "Ethereum",
+      "votes": 55
+    }
+  ]
+}

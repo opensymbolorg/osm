@@ -1,0 +1,58 @@
+[
+  {
+    "symbol": "OSM",
+    "status": "registered",
+    "vote_started_at": null,
+    "vote_end_at": null,
+    "registered": "OSM.OpenSymbol",
+    "listed": ["OSM.OpenSymbol", "OSM.OnlineSoccerManager", "OSM.OpenStreetMap"]
+  },
+  {
+    "symbol": "USD",
+    "status": "registered",
+    "vote_started_at": null,
+    "vote_end_at": null,
+    "registered": "USD.DEXCAP",
+    "listed": ["USD.DEXCAP", "USD.Tether", "USD.RBA"]
+  },
+  {
+    "symbol": "PAY",
+    "status": "registered",
+    "vote_started_at": null,
+    "vote_end_at": null,
+    "registered": "PAY.TenX",
+    "listed": ["PAY.TenX", "PAY.Paypal"]
+  },
+  {
+    "symbol": "BITUSD",
+    "status": "registered",
+    "vote_started_at": null,
+    "vote_end_at": null,
+    "registered": "BITUSD.Bitshares",
+    "listed": ["BITUSD.Bitshares"]
+  },
+  {
+    "symbol": "GAME",
+    "status": "voting",
+    "vote_started_at": 1511599381,
+    "vote_end_at": 1512000000,
+    "registered": null,
+    "listed": ["GAME.GameCredits", "GAME.Steam", "GAME.Playkey"]
+  },
+  {
+    "symbol": "XXX",
+    "status": "voting",
+    "vote_started_at": 1511599381,
+    "vote_end_at": 1512000000,
+    "registered": null,
+    "listed": ["XXX.KingBros", "XXX.Entertainment"]
+  },
+  {
+    "symbol": "GOLD",
+    "status": "voting",
+    "vote_started_at": 1511599381,
+    "vote_end_at": 1512000000,
+    "registered": null,
+    "listed": ["GOLD.IndiaEx", "GOLD.CapitalReserve"]
+  }
+]
