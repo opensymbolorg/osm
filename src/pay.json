@@ -1,0 +1,38 @@
+{
+  "symbol": "PAY",
+  "vote_started_at": 1511599381,
+  "vote_ended_at": 1512000000,
+  "status": "registered",
+  "listed": [
+    {
+      "id": "PAY.Credit",
+      "name": "PAYCredit",
+      "symbol": "GAME",
+      "address": "0x111",
+      "owner": "0x000",
+      "platform": "Ethereum",
+      "project": "gamecredits",
+      "votes": 10000
+    },
+    {
+      "id": "PAY.Steam",
+      "name": "Steam PAY Credits",
+      "owner": "0x000",
+      "address": "0x888",
+      "symbol": "GAME",
+      "project": "Steam",
+      "platform": "Omni",
+      "votes": 10
+    },
+    {
+      "id": "PAY.Playkey",
+      "name": "PlayKey PAY Credits",
+      "owner": "0x999",
+      "address": "0x999",
+      "symbol": "GAME",
+      "project": "Playkey",
+      "platform": "Ethereum",
+      "votes": 55
+    }
+  ]
+}

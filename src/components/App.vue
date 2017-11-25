@@ -5,8 +5,18 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    ...mapActions([
+      'fetchSymbols'
+    ])
+  },
+  created: function () {
+    this.fetchSymbols()
+  }
 }
 </script>
 

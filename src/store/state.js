@@ -1,6 +1,6 @@
 export default {
-  registered: ['game', 'pay', 'btcusd'],
-  voting: ['usd', 'aud', 'gold']
+  symbol: null,
+  symbols: null
 
   // currentRoute: null,
   // web3: {

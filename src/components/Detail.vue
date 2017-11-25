@@ -6,22 +6,26 @@
         <el-col :span="10">
           <el-card :body-style="{ padding: '0px' }">
             <div class="coin-wrapper">
-              <span class="coin-name">{{ symbol }}</span>
+              <span class="coin-name">{{ path }}</span>
             </div>
           </el-card>
         </el-col>
         <el-col :span="14">
           <h3>Vote ending in 30 days</h3>
-          <p>Category: Gaming</p>
-          <p>Status: Voting</p>
-          <p>Votes: 2034</p>
-          <p>Contestants: 4</p>
+          <p>Status: {{ symbol.status }}</p>
+          <p>Votes: {{ voteTotal }}</p>
+          <p>Contestants: {{ symbol.listed.length }}</p>
         </el-col>
       </el-row>
-      <section>
+      <section class="token-list">
         <h3>Tokens</h3>
-        <el-row :gutter=10 v-for="(o, index) in voting" :key="o">
-          <el-col :span="8">{{ o }}</el-col>
+        <el-row :gutter=10 v-for="(item, index) in symbol.listed" :key="index">
+          <el-col :span="14">
+            <p><b>{{ item.name }}</b></p>
+            <p>{{ item.id }}</p>
+          </el-col>
+          <el-col :span="5">{{ item.votes }}</el-col>
+          <el-col :span="5"><el-button size="small">Vote</el-button></el-col>
         </el-row>
       </section>
     </el-main>
@@ -30,7 +34,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import AppHeader from './layout/Header'
 import AppFooter from './layout/Footer'
 
@@ -42,16 +46,34 @@ export default {
   },
   data () {
     return {
-      input: ''
+      input: '',
+      path: null
     }
   },
   computed: {
     ...mapState([
-      'registered',
-      'voting'
+      'symbol'
     ]),
-    symbol () {
+    currentSymbol () {
       return this.$route.params.symbol
+    },
+    voteTotal () {
+      return this.symbol.listed.reduce((acc, curr) => curr.votes + acc, 0)
+    }
+  },
+  methods: {
+    ...mapActions([
+      'fetchPay',
+      'fetchGame'
+    ])
+  },
+  created () {
+    this.path = this.$route.params.symbol
+
+    if (['USD', 'PAY', 'OSM', 'BITUSD'].includes(this.path)) {
+      this.fetchPay()
+    } else {
+      this.fetchGame()
     }
   }
 }
