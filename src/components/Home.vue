@@ -4,7 +4,7 @@
     <el-main class="home-view">
       <p class="intro">Blockchain Trading Symbol Standard & Registry</p>
       <el-row :gutter="20">
-        <el-col :span="12" class="align-center"><el-button type="primary" size="small">Register Symbol</el-button></el-col>
+        <el-col :span="12" class="align-center"><el-button type="primary" size="small" @click.native="toggleModal">Register Symbol</el-button></el-col>
         <el-col :span="12" class="align-center"><el-button type="primary" size="small">Get Vote Token</el-button></el-col>
       </el-row>
       <section class="search">
@@ -36,6 +36,35 @@
           </el-row>
         </div>
       </section>
+      <el-dialog title="Register New Token" :visible.sync="showModal">
+        <el-form :model="form">
+          <el-form-item>
+            <el-select v-model="form.platform" placeholder="Blockchain">
+              <el-option label="Blockchain" value="blockchain"></el-option>
+              <el-option label="platform" value="platform"></el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item>
+            <el-input v-model="form.id" auto-complete="off" placeholder="Project (Bitcoin Core)"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-input v-model="form.name" auto-complete="off" placeholder="Name (Bitcoin)"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-input v-model="form.symbol" auto-complete="off" placeholder="Symbol (BTC)"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-input v-model="form.decimals" auto-complete="off" placeholder="Decimals (8)"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-input v-model="form.address" auto-complete="off" placeholder="Address (0x)"></el-input>
+          </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="showModal = false">Cancel</el-button>
+          <el-button type="primary" @click="showModal = false">Confirm</el-button>
+        </span>
+      </el-dialog>
     </el-main>
     <app-footer></app-footer>
   </el-container>
@@ -45,6 +74,7 @@
 import { mapGetters } from 'vuex'
 import AppHeader from './layout/Header'
 import AppFooter from './layout/Footer'
+import { EventBus } from '../event-bus.js'
 
 export default {
   name: 'home',
@@ -54,7 +84,11 @@ export default {
   },
   data () {
     return {
-      input: ''
+      input: '',
+      showModal: false,
+      form: {
+        platform: ''
+      }
     }
   },
   computed: {
@@ -62,6 +96,14 @@ export default {
       'registered',
       'voting'
     ])
+  },
+  methods: {
+    toggleModal () {
+      this.showModal = !this.showModal
+    }
+  },
+  mounted () {
+    EventBus.$on('toggleModal', this.toggleModal)
   }
 }
 </script>

@@ -71,3 +71,18 @@
     }
   }
 }
+
+.el-dialog {
+  width: 90%;
+
+  .el-dialog__body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .el-form {
+    .el-select {
+      width: 100%;
+    }
+  }
+}
