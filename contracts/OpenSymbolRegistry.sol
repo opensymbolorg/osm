@@ -8,7 +8,7 @@ contract OpenSymbolRegistry {
     }
     
     struct Asset {
-        // string name;
+        string name;
         string symbol;
         // uint decimal;
         // address projectAddress;
@@ -21,10 +21,20 @@ contract OpenSymbolRegistry {
     Asset[] public assets;
     
     function registerAsset(
-        string name
+        string name,
+        string symbol
     ) public returns (string) {
-        Asset memory newAsset = Asset("OSM");
+        Asset memory newAsset = Asset(name, symbol);
         assets.push(newAsset);
         return name;
+    }
+    
+    function assetLength() returns (uint) {
+        return assets.length;
+    }
+    
+    function getAsset(uint index) returns (string name, string symbol) {
+        name = assets[index].name;
+        symbol = assets[index].symbol;
     }
 }
