@@ -2,21 +2,11 @@
   & > .el-container {
     min-height: 100vh;
   }
+}
 
-  .el-main {
-    padding-top: 0;
-  }
-
-  .intro {
-    margin-top: 0;
-  }
-
+.el-container > .el-main {
   .align-center {
     text-align: center;
-  }
-
-  section.search {
-    margin: 20px 0;
   }
 
   .coin-wrapper {
@@ -31,8 +21,34 @@
     text-transform: uppercase;
     font-size: 16px;
   }
+}
+
+.el-main.home-view {
+  padding-top: 0;
+
+  .intro {
+    margin-top: 0;
+  }
+
+  section.search {
+    margin: 20px 0;
+  }
 
   .el-card {
     margin-bottom: 20px;
+  }
+}
+
+.el-main.detail-view {
+  h3 {
+    margin-top: 0;
+  }
+
+  .el-main {
+    padding-top: 20px;
+  }
+
+  .coin-name {
+    line-height: 70px;
   }
 }

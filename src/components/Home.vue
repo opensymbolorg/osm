@@ -1,7 +1,7 @@
 <template>
   <el-container class="is-vertical">
     <app-header></app-header>
-    <el-main>
+    <el-main class="home-view">
       <p class="intro">Sit aut suscipit in iure blanditiis sed accusantium ex ipsam?</p>
       <el-row :gutter="20">
         <el-col :span="12" class="align-center"><el-button type="primary" size="small">Register Symbol</el-button></el-col>
