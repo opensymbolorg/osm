@@ -50,9 +50,11 @@ contract OpenSymbolRegistry {
     mapping(bytes8 => Symbol) symbols;
     bytes8[] symbolsIndex;
 
+
     function OpenSymbolRegistry() {
         owner = msg.sender;
     }
+
 
     function register(
         bytes32  _id,

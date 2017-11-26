@@ -20,9 +20,9 @@ contract TestOpenSymbolRegistry {
             DeployedAddresses.OpenSymbolRegistry()
         );
         registry.register("OSM.OpenSymbol", "OSM", "OpenSymbol", 0, 0x0, "Open Symbol to the rescue", 0x00c1912fee45d61c87cc5ea59dae31190fffff232d);
+        registry.register("OSM.OnlineSoccer", "OSM", "OnlineSoccer", 2, 0x0, "Online Soccer Manager", 0x00c1912fee45d61c87cc5ea59dae31190fffff232d);
 
         var (id, decimals, addr, status) = registry.lookup("OSM");
-
         Assert.equal(status, "listed", "Symbol status is returned");
         Assert.equal(id, "OSM.OpenSymbol", "Symbol id is returned");
         Assert.equal(addr, 0x0, "Symbol smart contract address is returned");
