@@ -48,7 +48,7 @@ export default {
     }
   },
   mounted () {
-    EventBus.$on('toggleModal', this.toggleModal)
+    EventBus.$on('toggleRegisterModal', this.toggleModal)
   }
 }
 </script>

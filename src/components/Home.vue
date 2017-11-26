@@ -4,8 +4,8 @@
     <el-main class="home-view">
       <p class="intro">Blockchain Trading Symbol Standard & Registry</p>
       <el-row :gutter="20">
-        <el-col :span="12" class="align-center"><el-button type="primary" size="small" @click="toggleModal">Register Symbol</el-button></el-col>
-        <el-col :span="12" class="align-center"><el-button type="primary" size="small">Get Vote Token</el-button></el-col>
+        <el-col :span="12" class="align-center"><el-button type="primary" size="small" @click="toggleRegisterModal">Register Symbol</el-button></el-col>
+        <el-col :span="12" class="align-center"><el-button type="primary" size="small" @click="toggleTokenModal">Get Vote Token</el-button></el-col>
       </el-row>
       <section class="search">
         <el-input placeholder="Search symbol" v-model="input"></el-input>
@@ -36,6 +36,7 @@
           </el-row>
         </div>
       </section>
+      <token-modal></token-modal>
     </el-main>
     <app-footer></app-footer>
   </el-container>
@@ -45,13 +46,15 @@
 import { mapGetters } from 'vuex'
 import AppHeader from './layout/Header'
 import AppFooter from './layout/Footer'
+import TokenModal from './TokenModal.vue'
 import { EventBus } from '../event-bus.js'
 
 export default {
   name: 'home',
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
+    TokenModal
   },
   data () {
     return {
@@ -65,8 +68,11 @@ export default {
     ])
   },
   methods: {
-    toggleModal () {
-      EventBus.$emit('toggleModal')
+    toggleRegisterModal () {
+      EventBus.$emit('toggleRegisterModal')
+    },
+    toggleTokenModal () {
+      EventBus.$emit('toggleTokenModal')
     }
   }
 }
