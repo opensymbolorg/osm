@@ -19,26 +19,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.right {
-  float: right;
-}
-
-.el-menu {
-  border-bottom: none;
-}
-
-.el-menu-item {
-  padding: 0;
-  border-bottom: none;
-}
-
-.el-menu-item.right {
-  padding: 0 5px;
-}
-
-.el-menu-item.is-active {
-  border-bottom: none;
-}
-</style>
