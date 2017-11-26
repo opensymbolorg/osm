@@ -14,20 +14,21 @@
           <h3>Vote ending in 30 days</h3>
           <p>Status: {{ symbol.status }}</p>
           <p>Votes: {{ voteTotal }}</p>
-          <p>Contestants: {{ symbol.listed.length }}</p>
+          <p>Entries: {{ symbol.listed.length }}</p>
         </el-col>
       </el-row>
       <section class="token-list">
-        <h3>Tokens</h3>
+        <h3>Entries</h3>
         <el-row :gutter=10 v-for="(item, index) in symbol.listed" :key="index">
           <el-col :span="14">
             <p><b>{{ item.name }}</b></p>
             <p>{{ item.id }}</p>
           </el-col>
           <el-col :span="5">{{ item.votes }}</el-col>
-          <el-col :span="5"><el-button size="small">Vote</el-button></el-col>
+          <el-col :span="5"><el-button type="primary" size="small" @click="toggleVoteModal(item)">Vote</el-button></el-col>
         </el-row>
       </section>
+      <vote-modal></vote-modal>
     </el-main>
     <app-footer></app-footer>
   </el-container>
@@ -37,12 +38,15 @@
 import { mapState, mapActions } from 'vuex'
 import AppHeader from './layout/Header'
 import AppFooter from './layout/Footer'
+import VoteModal from './VoteModal.vue'
+import { EventBus } from '../event-bus.js'
 
 export default {
-  name: 'home',
+  name: 'detail',
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
+    VoteModal
   },
   data () {
     return {
@@ -65,7 +69,10 @@ export default {
     ...mapActions([
       'fetchPay',
       'fetchGame'
-    ])
+    ]),
+    toggleVoteModal (token) {
+      EventBus.$emit('toggleVoteModal', token)
+    }
   },
   created () {
     this.path = this.$route.params.symbol
