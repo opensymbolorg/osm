@@ -5,7 +5,10 @@
     "vote_started_at": null,
     "vote_end_at": null,
     "registered": "OSM.OpenSymbol",
-    "listed": ["OSM.OpenSymbol", "OSM.OnlineSoccerManager", "OSM.OpenStreetMap"]
+    "listed": ["OSM.OpenSymbol", "OSM.OnlineSoccerManager", "OSM.OpenStreetMap"],
+    "registered_at": 1509930222270,
+    "name": "Open Symbol",
+    "vote_total": 200000
   },
   {
     "symbol": "USD",
@@ -13,7 +16,10 @@
     "vote_started_at": null,
     "vote_end_at": null,
     "registered": "USD.DEXCAP",
-    "listed": ["USD.DEXCAP", "USD.Tether", "USD.RBA"]
+    "listed": ["USD.DEXCAP", "USD.Tether", "USD.RBA"],
+    "registered_at": 1509066240085,
+    "name": "USD DEXCAP",
+    "vote_total": 20000
   },
   {
     "symbol": "PAY",
@@ -21,7 +27,10 @@
     "vote_started_at": null,
     "vote_end_at": null,
     "registered": "PAY.TenX",
-    "listed": ["PAY.TenX", "PAY.Paypal"]
+    "listed": ["PAY.TenX", "PAY.Paypal"],
+    "registered_at": 1511226252084,
+    "name": "PAY TenX",
+    "vote_total": 500000
   },
   {
     "symbol": "BITUSD",
@@ -29,30 +38,42 @@
     "vote_started_at": null,
     "vote_end_at": null,
     "registered": "BITUSD.Bitshares",
-    "listed": ["BITUSD.Bitshares"]
+    "listed": ["BITUSD.Bitshares"],
+    "registered_at": 1510362273411,
+    "name": "BITUSD Bitshares",
+    "vote_total": 1500000
   },
   {
     "symbol": "GAME",
     "status": "voting",
-    "vote_started_at": 1511599381,
-    "vote_end_at": 1512000000,
+    "vote_started_at": 1511572428249,
+    "vote_end_at": 1514164475566,
     "registered": null,
-    "listed": ["GAME.GameCredits", "GAME.Steam", "GAME.Playkey"]
+    "listed": ["GAME.GameCredits", "GAME.Steam", "GAME.Playkey"],
+    "registered_at": null,
+    "name": "GAME GameCredits",
+    "vote_total": 1000
   },
   {
     "symbol": "XXX",
     "status": "voting",
-    "vote_started_at": 1511599381,
-    "vote_end_at": 1512000000,
+    "vote_started_at": 1511486050082,
+    "vote_end_at": 1514250884742,
     "registered": null,
-    "listed": ["XXX.KingBros", "XXX.Entertainment"]
+    "listed": ["XXX.KingBros", "XXX.Entertainment"],
+    "registered_at": null,
+    "name": "XXX Entertainment",
+    "vote_total": 2000
   },
   {
     "symbol": "GOLD",
     "status": "voting",
-    "vote_started_at": 1511599381,
-    "vote_end_at": 1512000000,
+    "vote_started_at": 1511399663372,
+    "vote_end_at": 1514337293622,
     "registered": null,
-    "listed": ["GOLD.IndiaEx", "GOLD.CapitalReserve"]
+    "listed": ["GOLD.IndiaEx", "GOLD.CapitalReserve"],
+    "registered_at": null,
+    "name": "GOLD IndiaEx",
+    "vote_total": 3000
   }
 ]

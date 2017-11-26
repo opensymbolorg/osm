@@ -13,10 +13,16 @@
         <div class="box">
           <h3>Registered</h3>
           <el-row :gutter=10>
-            <el-col :span="8" v-for="(item, index) in registered" :key="item.symbol">
+            <el-col :span="12" v-for="(item, index) in registered" :key="item.symbol">
               <el-card :body-style="{ padding: '0px' }">
-                <router-link :to="item.symbol" class="coin-wrapper">
-                  <span class="coin-name">{{ item.symbol }}</span>
+                <router-link :to="item.symbol" class="token-wrapper">
+                  <p class="token-name">{{ item.name }}</p>
+                  <p class="token-symbol">{{ item.symbol }}</p>
+                  <p class="token-votes">{{ item.vote_total }}</p>
+                  <el-row :gutter="10">
+                    <el-col :span="12"><p class="token-status">{{ item.status }}</p></el-col>
+                    <el-col :span="12"><p class="token-date">{{ registeredAt(item.registered_at) }}</p></el-col>
+                  </el-row>
                 </router-link>
               </el-card>
             </el-col>
@@ -26,10 +32,16 @@
         <div class="box">
           <h3>Voting</h3>
           <el-row :gutter=10>
-            <el-col :span="8" v-for="(item, index) in voting" :key="item.symbol">
+            <el-col :span="12" v-for="(item, index) in voting" :key="item.symbol">
               <el-card :body-style="{ padding: '0px' }">
-                <router-link :to="item.symbol" class="coin-wrapper">
-                  <span class="coin-name">{{ item.symbol }}</span>
+                <router-link :to="item.symbol" class="token-wrapper">
+                  <p class="token-name">{{ item.name }}</p>
+                  <p class="token-symbol">{{ item.symbol }}</p>
+                  <p class="token-votes">{{ item.vote_total }}</p>
+                  <el-row :gutter="10">
+                    <el-col :span="12"><p class="token-status">{{ item.status }}</p></el-col>
+                    <el-col :span="12"><p class="token-date">{{ registeredAt(item.vote_end_at) }}</p></el-col>
+                  </el-row>
                 </router-link>
               </el-card>
             </el-col>
@@ -73,6 +85,9 @@ export default {
     },
     toggleTokenModal () {
       EventBus.$emit('toggleTokenModal')
+    },
+    registeredAt (date) {
+      if (date) return (new Date(date)).toLocaleDateString()
     }
   }
 }

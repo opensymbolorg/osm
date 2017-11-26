@@ -5,8 +5,8 @@
       <el-row :gutter="30">
         <el-col :span="10">
           <el-card :body-style="{ padding: '0px' }">
-            <div class="coin-wrapper">
-              <span class="coin-name">{{ path }}</span>
+            <div class="token-wrapper" style="padding: 40px 0">
+              <span class="token-symbol">{{ path }}</span>
             </div>
           </el-card>
         </el-col>

@@ -9,17 +9,38 @@
     text-align: center;
   }
 
-  .coin-wrapper {
+  .token-wrapper {
     display: inline-block;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     color: inherit;
     width: 100%;
-  }
 
-  .coin-name {
-    text-transform: uppercase;
-    font-size: 16px;
+    p {
+      margin: 0;
+      font-weight: bold;
+      color: #5A5E66;
+    }
+
+    .token-name{
+      font-size: 14px;
+    }
+
+    .token-symbol {
+      text-transform: uppercase;
+      font-size: 24px;
+      margin: 10px 0 5px;
+      color: #2D2F33;
+    }
+
+    .token-votes {
+      margin: 0 0 5px;
+    }
+
+    .token-status,
+    .token-date {
+      font-size: 12px;
+    }
   }
 }
 
