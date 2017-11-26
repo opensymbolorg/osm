@@ -16,7 +16,7 @@
       <el-row :gutter="20">
         <el-col :span="18">
           <el-form-item>
-            <el-input v-model="form.osm" auto-complete="off" readonly></el-input>
+            <el-input v-model="form.osm" auto-complete="off"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="6">
