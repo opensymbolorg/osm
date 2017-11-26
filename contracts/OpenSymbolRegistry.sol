@@ -50,6 +50,10 @@ contract OpenSymbolRegistry {
     mapping(bytes8 => Symbol) symbols;
     bytes8[] symbolsIndex;
 
+    function OpenSymbolRegistry() {
+        owner = msg.sender;
+    }
+
     function register(
         bytes32  _id,
         bytes8   _symbol,
@@ -61,21 +65,23 @@ contract OpenSymbolRegistry {
     ) {
         Symbol storage symbol = symbols[_symbol];
         if (! symbol.exist) {
-            symbols[_symbol].symbol = _symbol;
-            symbols[_symbol].exist = true;
+            symbol.symbol = _symbol;
+            symbol.exist = true;
             symbolsIndex.push(_symbol);
         }
 
-        Asset storage asset = assets[_symbol];
+        Asset storage asset = assets[_id];
         if (! asset.exist) {
-            assets[_symbol].id = _id;
-            assets[_symbol].symbol = _symbol;
-            assets[_symbol].name = _name;
-            assets[_symbol].decimals = _decimals;
-            assets[_symbol].addr = _addr;
-            assets[_symbol].project = _project;
-            assets[_symbol].owner = _owner;
-            assets[_symbol].exist = true;
+            symbol.entries.push(_id);
+
+            asset.id = _id;
+            asset.symbol = _symbol;
+            asset.name = _name;
+            asset.decimals = _decimals;
+            asset.addr = _addr;
+            asset.project = _project;
+            asset.owner = _owner;
+            asset.exist = true;
             assetsIndex.push(_symbol);
         }
     }
@@ -83,11 +89,34 @@ contract OpenSymbolRegistry {
     function lookup(bytes8 _symbol) view returns (bytes32 id, uint8 decimals, address addr, bytes32 status) {
         Symbol storage symbol = symbols[_symbol];
 
-        /** TODO pick first project
-        id = ;
-        decimals = ;
-        addr = ;
-        status ;
-        */
+        if (symbol.exist) {
+            if (uint(symbol.registered) == 0) {
+                status = "listed";
+
+                // get asset with highest votes
+                uint highestVotes = 0;
+                for (uint i = 0; i < symbol.entries.length; ++i) {
+                    Asset storage asset = assets[
+                        symbol.entries[i]
+                    ];
+
+                    if (i == 0 || highestVotes < asset.votes) {
+                        highestVotes = asset.votes;
+                        id = asset.id;
+                        decimals = asset.decimals;
+                        addr = asset.addr;
+                    }
+                }
+            } else {
+                status = "registered";
+                id = symbol.registered;
+
+                asset = assets[id];
+                decimals = asset.decimals;
+                addr = asset.addr;
+            }
+        } else {
+            status = "available";
+        }
     }
 }
